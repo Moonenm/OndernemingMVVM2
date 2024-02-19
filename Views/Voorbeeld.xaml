@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OndernemingMVVM2.Views.Voorbeeld"
+             xmlns:viewmodel="clr-namespace:OndernemingMVVM2.ViewModels"
+             x:DataType="viewmodel:VoorbeeldViewModel"
+             Title="{Binding Titel}">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Totaal}"/>
+        <HorizontalStackLayout>
+            <Label Text="Getal2"/>
+            <Entry Text="{Binding Getal2}"/>
+            
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Getal1"/>
+            <Entry Text="{Binding Getal}" />
+            
+        </HorizontalStackLayout>
+        <Button Text="+" Command="{Binding GetalOptellenCommand}" WidthRequest="20"/>
+        <Button Text="*" Command="{Binding GetalVermenigvuldigenCommand}" WidthRequest="20"/>
+    </VerticalStackLayout>
+</ContentPage>
