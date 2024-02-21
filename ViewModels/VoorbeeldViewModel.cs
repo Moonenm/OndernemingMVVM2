@@ -21,6 +21,11 @@ namespace OndernemingMVVM2.ViewModels
             Titel = "Voorbeeld 1";
         }
 
+        partial void OnGetal2Changing(int value)
+        {
+            Totaal = Getal + value;
+        }
+
         [RelayCommand]
         private void GetalOptellen()
         {

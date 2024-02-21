@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Extensions.Logging;
 
+
 namespace OndernemingMVVM2
 {
     public static class MauiProgram
@@ -20,8 +21,12 @@ namespace OndernemingMVVM2
     		builder.Logging.AddDebug();
 #endif
             builder.Services.AddSingleton<VoorbeeldViewModel>();
+            builder.Services.AddSingleton<MainPageViewModel>();
+
+            builder.Services.AddSingleton<WerknemerRepository>();
 
             builder.Services.AddSingleton<Voorbeeld>();
+            builder.Services.AddSingleton<MainPage>();
 
             return builder.Build();
         }
