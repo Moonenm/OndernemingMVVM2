@@ -6,22 +6,53 @@
              x:DataType="viewmodel:MainPageViewModel"
              x:Class="OndernemingMVVM2.Views.MainPage"
              Title="MainPage">
-    <ScrollView>
-        <VerticalStackLayout>
-            <Button Text="Toon werknemers" Command="{Binding ToonWerknemersCommand}"/>
-            <CollectionView ItemsSource="{Binding Werknemers}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Werknemer">
-                        <HorizontalStackLayout Padding="10">
-                            <Image Source="{Binding Avatar}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
-                            <VerticalStackLayout Padding="10">
-                                <Label Text="{Binding VolledigeNaam}" FontSize="20" />
-                                <Label Text="{Binding Functie}" FontSize="16" />
-                            </VerticalStackLayout>
-                        </HorizontalStackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+
+    <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,Auto">
+        <CollectionView ItemsSource="{Binding Werknemers}"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="3"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedWerknemer}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Werknemer">
+                    <HorizontalStackLayout Padding="10">
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource 
+                                AncestorType={x:Type 
+                                viewmodel:MainPageViewModel}},
+                                Path=ToonDetailsCommand}"/>
+                            <SwipeGestureRecognizer 
+                                Command="{Binding Source={RelativeSource 
+                                AncestorType={x:Type 
+                                viewmodel:MainPageViewModel}},
+                                Path=VerwijderWerknemerCommand}"
+                                Direction="Left"/>
+                        </HorizontalStackLayout.GestureRecognizers>
+                        <Image Source="{Binding Avatar}" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" />
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding VolledigeNaam}" FontSize="20" />
+                            <Label Text="{Binding Functie}" FontSize="16" />
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+         <Button Text="Toon werknemers" 
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 Command="{Binding ToonWerknemersCommand}"/>
+
+        <Button Text="Toon voorbeeld"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Command="{Binding ToonVoorbeeldCommand}"/>
+
+        <Button Text="Toon Details"
+                 Grid.Row="1"
+                 Grid.Column="2"
+                 Command="{Binding ToonDetailsCommand}"/>
+    </Grid> 
+
+
 </ContentPage>

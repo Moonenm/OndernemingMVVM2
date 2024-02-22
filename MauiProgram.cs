@@ -22,11 +22,13 @@ namespace OndernemingMVVM2
 #endif
             builder.Services.AddSingleton<VoorbeeldViewModel>();
             builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<WerknemerDetailsViewModel>();
 
             builder.Services.AddSingleton<WerknemerRepository>();
 
             builder.Services.AddSingleton<Voorbeeld>();
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<WerknemerDetails>();
 
             return builder.Build();
         }

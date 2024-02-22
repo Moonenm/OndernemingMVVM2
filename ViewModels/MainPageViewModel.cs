@@ -14,10 +14,37 @@ namespace OndernemingMVVM2.ViewModels
 
         private WerknemerRepository _repo;
 
+        [ObservableProperty]
+        Werknemer selectedWerknemer;
+
         public MainPageViewModel(WerknemerRepository repo)
         {
             _repo = repo;
+            ToonWerknemers();
+            SelectedWerknemer = new();
         }
+
+        [RelayCommand]
+        private async Task ToonVoorbeeld()
+        {
+            await Shell.Current.GoToAsync("Voorbeeld");
+        }
+
+        [RelayCommand]
+        private void VerwijderWerknemer()
+        {
+            Werknemers.Remove(SelectedWerknemer);
+        }
+
+        [RelayCommand]
+        private async Task ToonDetails()
+        {
+            await Shell.Current.GoToAsync("WerknemerDetails",true,new Dictionary<string, object>
+            {
+                {"Werknemer",SelectedWerknemer }
+            });
+        }
+
         [RelayCommand]
         private void ToonWerknemers()
         {
