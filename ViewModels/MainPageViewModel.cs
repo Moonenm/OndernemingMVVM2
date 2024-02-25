@@ -17,7 +17,7 @@ namespace OndernemingMVVM2.ViewModels
         [ObservableProperty]
         Werknemer selectedWerknemer;
 
-        public MainPageViewModel(WerknemerRepository repo)
+          public MainPageViewModel(WerknemerRepository repo)
         {
             _repo = repo;
             ToonWerknemers();
@@ -34,6 +34,7 @@ namespace OndernemingMVVM2.ViewModels
         private void VerwijderWerknemer()
         {
             Werknemers.Remove(SelectedWerknemer);
+
         }
 
         [RelayCommand]
@@ -41,7 +42,7 @@ namespace OndernemingMVVM2.ViewModels
         {
             await Shell.Current.GoToAsync("WerknemerDetails",true,new Dictionary<string, object>
             {
-                {"Werknemer",SelectedWerknemer }
+                {"SelectedWerknemer",SelectedWerknemer }
             });
         }
 

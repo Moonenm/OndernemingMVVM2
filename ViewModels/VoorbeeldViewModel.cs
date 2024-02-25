@@ -29,8 +29,10 @@ namespace OndernemingMVVM2.ViewModels
         [RelayCommand]
         private void GetalOptellen()
         {
-            if (Getal < Getal2)
-                Totaal = Getal + Getal2;
+           // if (Getal < Getal2)
+           //     Totaal = Getal + Getal2;
+
+
         }
 
         [RelayCommand]

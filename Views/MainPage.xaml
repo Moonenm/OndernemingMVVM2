@@ -10,7 +10,7 @@
     <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,Auto">
         <CollectionView ItemsSource="{Binding Werknemers}"
                         Grid.Row="0"
-                        Grid.ColumnSpan="3"
+                        Grid.ColumnSpan="2"
                         SelectionMode="Single"
                         SelectedItem="{Binding SelectedWerknemer}">
             <CollectionView.ItemTemplate>

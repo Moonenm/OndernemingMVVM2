@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OndernemingMVVM2.ViewModels
 {
-    [QueryProperty("Werknemer","Werknemer")]
+    [QueryProperty("Werknemer","SelectedWerknemer")]
     public partial class WerknemerDetailsViewModel:BaseViewModel
     {
         [ObservableProperty]
