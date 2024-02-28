@@ -14,5 +14,11 @@
     <ShellContent
         Title="Voorbeeld"
         ContentTemplate="{DataTemplate views:Voorbeeld}" />
+    <ShellContent
+        Title="Movies"
+        ContentTemplate="{DataTemplate views:MoviePage}" />
+    <ShellContent
+        Title="Joke"
+        ContentTemplate="{DataTemplate views:JokePage}" />
 
 </Shell>
