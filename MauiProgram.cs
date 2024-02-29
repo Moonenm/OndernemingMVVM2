@@ -24,6 +24,7 @@ namespace OndernemingMVVM2
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<WerknemerDetailsViewModel>();
             builder.Services.AddSingleton<ApiViewModel>();
+            builder.Services.AddSingleton<DetailMoviePageViewModel>();
 
             builder.Services.AddSingleton<WerknemerRepository>();
 
@@ -32,6 +33,7 @@ namespace OndernemingMVVM2
             builder.Services.AddSingleton<WerknemerDetails>();
             builder.Services.AddSingleton<IpAdresPage>();
             builder.Services.AddSingleton<MoviePage>();
+            builder.Services.AddSingleton<DetailMoviePage>();
 
             return builder.Build();
         }

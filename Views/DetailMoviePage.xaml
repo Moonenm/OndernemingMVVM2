@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OndernemingMVVM2.Views.DetailMoviePage"
+             xmlns:viewmodel="clr-namespace:OndernemingMVVM2.ViewModels"
+             x:DataType="viewmodel:DetailMoviePageViewModel"
+             Title="DetailMoviePage">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+        <Label Text="{Binding Movie.Title}" FontSize="Small"/>
+        <Label Text="{Binding Movie.Year}"/>
+        <Label Text="{Binding Movie.Type}"/>
+        <Image Source="{Binding Movie.Poster}" HeightRequest="200"/>
+    </VerticalStackLayout>
+</ContentPage>

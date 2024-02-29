@@ -5,7 +5,9 @@
              Title="ViewToViewPage">
     <ScrollView>
         <VerticalStackLayout>
+            <Label Text="{Binding Source={x:Reference TekstLabel},Path=BackgroundColor}"/>
             <Label Text="Dit is random tekst" 
+                   x:Name="TekstLabel"
                    FontSize="{Binding Source={x:Reference Fontsize},Path=Text}"
                    BackgroundColor="{Binding Source={x:Reference Kleur},Path=Text}"/>
             <Entry Placeholder="Geef een kleur" x:Name="Kleur"/>
@@ -17,6 +19,5 @@
 
             <Image Source="kitten1.jpg" HeightRequest="{Binding Source={x:Reference Hoogte},Path=Value}"/>
         </VerticalStackLayout>
-        
     </ScrollView>
 </ContentPage>

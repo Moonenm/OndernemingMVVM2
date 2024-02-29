@@ -27,6 +27,8 @@ namespace OndernemingMVVM2.ViewModels
 
         private int PageNumber;
 
+        [ObservableProperty]
+        Movie selectedMovie;
         public ApiViewModel()
         {
             TemplateString = "";
@@ -82,6 +84,14 @@ namespace OndernemingMVVM2.ViewModels
             var Url2 = "https://api.chucknorris.io/jokes/random";
             var response2 = HttpClient.GetStringAsync(Url2).Result;
             Joke = JsonSerializer.Deserialize<Joke>(response2);
+        }
+
+        [RelayCommand]
+        private async Task GoToDetailsMovie() { 
+            await Shell.Current.GoToAsync(nameof(DetailMoviePage),true, new Dictionary<string, object>
+            {
+                {"Movie", SelectedMovie}
+            });
         }
     }
 }

@@ -16,7 +16,7 @@
         </HorizontalStackLayout>
 
         
-        <CollectionView ItemsSource="{Binding MovieResult.Search}">
+        <CollectionView ItemsSource="{Binding MovieResult.Search}" SelectionMode="Single" SelectedItem="{Binding SelectedMovie}">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="5" />
             </CollectionView.ItemsLayout>
@@ -24,6 +24,12 @@
                 <DataTemplate x:DataType="model:Movie">
                     
                     <Frame  HeightRequest="300">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding 
+                                Source={x:RelativeSource 
+                                AncestorType={Type 
+                                viewmodel:ApiViewModel}},Path=GoToDetailsMovieCommand}"/>
+                        </Frame.GestureRecognizers>
                         <VerticalStackLayout HorizontalOptions="Center">
                             <Image Source="{Binding Poster}" HeightRequest="200" Aspect="AspectFit"/>
                             <Label Text="{Binding Title}" />
