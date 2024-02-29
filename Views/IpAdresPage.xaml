@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OndernemingMVVM2.Views.IpAdresPage"
+             xmlns:viewmodel ="clr-namespace:OndernemingMVVM2.ViewModels"
+             x:DataType="viewmodel:ApiViewModel"
+             Title="IpAdresPage">
+    <VerticalStackLayout>
+        <Label Text="{Binding IpAdres.ip,StringFormat='Mijn Ip-Adres = {0}'}"/>
+        <Button Text="Ip adres ophalen" Command="{Binding IPOphalenCommand}"/>
+        <Label Text="{Binding Joke.value,StringFormat='Chuck Norris joke = {0}'}"/>
+    </VerticalStackLayout>
+</ContentPage>

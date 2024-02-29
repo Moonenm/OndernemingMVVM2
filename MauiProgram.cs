@@ -23,12 +23,15 @@ namespace OndernemingMVVM2
             builder.Services.AddSingleton<VoorbeeldViewModel>();
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddSingleton<WerknemerDetailsViewModel>();
+            builder.Services.AddSingleton<ApiViewModel>();
 
             builder.Services.AddSingleton<WerknemerRepository>();
 
             builder.Services.AddSingleton<Voorbeeld>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<WerknemerDetails>();
+            builder.Services.AddSingleton<IpAdresPage>();
+            builder.Services.AddSingleton<MoviePage>();
 
             return builder.Build();
         }

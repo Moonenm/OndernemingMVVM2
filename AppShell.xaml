@@ -14,5 +14,13 @@
     <ShellContent
         Title="Voorbeeld"
         ContentTemplate="{DataTemplate views:Voorbeeld}" />
+    <ShellContent
+        Title="IpAdres"
+        ContentTemplate="{DataTemplate views:IpAdresPage}"
+        Route="IpAdresPage" />
 
+    <ShellContent
+        Title="Movies"
+        ContentTemplate="{DataTemplate views:MoviePage}"
+        Route="MoviePage" />
 </Shell>
