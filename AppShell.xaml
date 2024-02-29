@@ -23,4 +23,9 @@
         Title="Movies"
         ContentTemplate="{DataTemplate views:MoviePage}"
         Route="MoviePage" />
+
+    <ShellContent
+        Title="ViewToView"
+        ContentTemplate="{DataTemplate views:ViewToViewPage}"
+        Route="ViewToViewPage" />
 </Shell>

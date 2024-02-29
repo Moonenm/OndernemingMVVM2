@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OndernemingMVVM2.Views.ViewToViewPage"
+             Title="ViewToViewPage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Dit is random tekst" 
+                   FontSize="{Binding Source={x:Reference Fontsize},Path=Text}"
+                   BackgroundColor="{Binding Source={x:Reference Kleur},Path=Text}"/>
+            <Entry Placeholder="Geef een kleur" x:Name="Kleur"/>
+            <Entry Placeholder="Geef een fontsize" x:Name="Fontsize"/>
+            <HorizontalStackLayout>
+                <Stepper x:Name="Hoogte" Minimum="200" Maximum="600" Increment="10"/>
+                <Label Text="{Binding Source={x:Reference Hoogte},Path=Value}"/>
+            </HorizontalStackLayout>
+
+            <Image Source="kitten1.jpg" HeightRequest="{Binding Source={x:Reference Hoogte},Path=Value}"/>
+        </VerticalStackLayout>
+        
+    </ScrollView>
+</ContentPage>
